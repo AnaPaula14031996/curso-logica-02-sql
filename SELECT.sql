@@ -38,3 +38,51 @@ SELECT
     DATE_FORMAT(data_fabricacao, '%d/%m/%Y') AS 'Data de Fabricação'
 FROM carros
 WHERE data_fabricacao IS NOT NULL;
+
+# Operadores Relacionais
+# = Igual
+# > Maior
+# >=  Maior igual
+# < Menor
+# <= Menor Igual
+# != Diferente
+USE vendas;
+SELECT * FROM carros
+WHERE id != 1;
+
+# busca onde o nome começa com nes
+SELECT * FROM alimentos
+WHERE nome LIKE 'Nes%';
+
+# busca onde o nome termina com nes
+SELECT * FROM alimentos
+WHERE nome LIKE '%Nes';
+
+# busca onde o nome contem em qualquer parte nes
+SELECT * FROM alimentos
+WHERE nome LIKE '%Nes%';
+
+# apresenta a quantidade de caracteres da coluna
+SELECT nome, LENGTH(nome) FROM alimentos;
+
+# apresenta o nome em caixa alta
+SELECT UPPER(nome) FROM alimentos;
+
+# apresenta o nome em caixa baixa
+SELECT LOWER(nome) FROM alimentos;
+
+# Substring = serve para obter parcialmente o texto
+SELECT CONCAT(SUBSTRING(nome, 1, 10), '...') FROM alimentos
+
+#1° PAGINA
+SELECT * FROM alimentos
+LIMIT 0, 2;
+
+#2° PAGINA
+SELECT * FROM alimentos
+LIMIT 2, 2;
+
+#3° PAGINA
+SELECT * FROM alimentos
+LIMIT 4, 2;
+
